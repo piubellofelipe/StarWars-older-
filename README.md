@@ -1,1 +1,3 @@
-"#tudo-sobre-Star-Wars"
+>Clone this git
+>npm install
+>npm start
