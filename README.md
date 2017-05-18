@@ -1,3 +1,1 @@
->Clone this git
->npm install
->npm start
+>Clone this git, run npm install, run npm start
