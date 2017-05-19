@@ -40,6 +40,7 @@ class App extends Component{
         return response.results;  
     }
 
+//function responsible for update the character list based on the filters
     reload(){
         var newChars = "";
         newChars = this.state.characters.filter( character => {
@@ -53,6 +54,7 @@ class App extends Component{
         this.setState({characters : newChars});
     }
 
+//function that updates the characterList based on a search
     characterSearch(term){
         var url = 'https://swapi.co/api/people/?search=';
         var response = "";

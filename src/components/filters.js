@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+//Class responsible for managing the filters input
 class Filter extends Component{
     constructor(props){
         super(props);
