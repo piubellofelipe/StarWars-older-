@@ -38,7 +38,7 @@ class App extends Component{
         return response.results;  
     }
 
-    characterSearch(term){
+    characterSearch(term, filter){
         var url = 'https://swapi.co/api/people/?search=';
         var response = "";
         req.open('GET', url+term.term, false);
@@ -55,7 +55,7 @@ class App extends Component{
     }
 
     render() {
-        const characterSearch = _.debounce((term) => this.characterSearch(term), 300);
+        const characterSearch = _.debounce((term) => this.characterSearch(term), 50);
         return(
             <div className = "app">
                 <SearchBar onSearchCharacterChange={characterSearch}/>

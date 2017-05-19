@@ -41,9 +41,6 @@ const selectedCharacter = (props) => {
             return( <div onClick = {() => props.onAddInfoSelect(movie)}> {movie.title}</div>);
         }
      );
-     console.log(moviesListNames);
-
-
      //returns the most important info about the character
     return(
         <div   className = "mainInfo">
