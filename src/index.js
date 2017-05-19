@@ -47,11 +47,9 @@ class App extends Component{
             (!this.state.filter.mass || character.mass == this.state.filter.mass) &&
             (!this.state.filter.height || character.height == this.state.filter.height)
             ){
-                console.log("Passou: ", character);
                 return character;
             }
         });
-        console.log(newChars);
         this.setState({characters : newChars});
     }
 
