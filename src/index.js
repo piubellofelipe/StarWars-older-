@@ -26,6 +26,7 @@ class App extends Component{
         };        
     }
 
+//gather the characters from SWAPI
     loadCharacters(page, filter){
         var response = "";
         req.open('GET', url_SWAPI+'?page='+page, false);
@@ -54,7 +55,7 @@ class App extends Component{
         this.setState({characters : newChars});
     }
 
-//function that updates the characterList based on a search
+//gather the characters on the SWAPI based on the name search
     characterSearch(term){
         var url = 'https://swapi.co/api/people/?search=';
         var response = "";
@@ -72,6 +73,7 @@ class App extends Component{
         return response.results;
     }
 
+//display everything
     render() {
         const characterSearch = _.debounce((term) => this.characterSearch(term), 50);
         
@@ -79,7 +81,8 @@ class App extends Component{
             <div className = "app">
                 <SearchBar onSearchCharacterChange={characterSearch}/>
                 <Filter 
-                    onFilterChange={ filter =>{ this.setState({filter})}}
+                    onFilterChange={ filter => this.setState({filter})}
+                    onApplyFilters = { () => this.reload()}
                 />
                 <SelectedCharacter   
                     onAddInfoSelect = { addInfo => {this.setState({addInfo});}}
@@ -106,4 +109,4 @@ class App extends Component{
         );
     }
 }
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.getElementById('container'));

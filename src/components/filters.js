@@ -23,6 +23,7 @@ class Filter extends Component{
             value = {this.state.mass}
             defaultValue = {"massa"}
             onChange={event => this.onMassInputChange(event.target.value)} />
+            <button className = "applyFiltersButton" onClick = {this.props.onApplyFilters}> APLICAR FILTROS</button>
         </div>
         );
     }
