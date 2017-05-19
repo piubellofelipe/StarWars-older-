@@ -75,7 +75,7 @@ class App extends Component{
 
 //display everything
     render() {
-        const characterSearch = _.debounce((term) => this.characterSearch(term), 50);
+        const characterSearch = _.debounce((term) => this.characterSearch(term), 100);
         
         return(
             <div className = "app">
