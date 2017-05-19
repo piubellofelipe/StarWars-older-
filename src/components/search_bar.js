@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+//class responsible for the searching bar, and managing it's content
 class SearchBar extends Component{
     constructor(props){
         super(props);

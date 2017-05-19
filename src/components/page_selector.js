@@ -1,5 +1,5 @@
 import React from 'react'
-
+//component responsible for simply allowing the user to navigate through pages
 const selector = (props) =>{
     return(
         <div className = "page-selector">

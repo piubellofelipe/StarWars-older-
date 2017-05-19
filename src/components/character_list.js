@@ -1,6 +1,5 @@
 import React from 'react'
-import characterListItem from './character_list_item'
-
+//component responsible for showing a list of character names, allowing user interaction when a name is clicked
 const characterList = (props) =>{
     const characterItems = props.characters.map( (character) => {
         return(
