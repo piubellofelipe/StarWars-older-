@@ -1,31 +1,35 @@
 .app{
-    width: 300px;
-    height: 100%;
+    width: 80%;
+    display: block;
+    overflow: auto;
     background-image: url("death_star_background.png");
     color:rgb(230,230,230);
+    text-align: center;
 }
 .mainInfo{
     background-color: rgba(100, 100, 100, 0.9);
+    display:block;
+    overflow: auto;
 }
 .character-list{
-    width: 300px;
-    background-color:rgba();
-    margin:0;
 }
-
 .character-list-item{
     background-color:rgba(0,0,0,0.8);
 }
 .page-selector{
-    width:70px;
-    height: 50px;
-    position:absolute;
-    margin: auto;
     background-color:rgba(100,100,100,0.9);
 }
 .pgRight{
-    float:right;
+    float:left;
 }
 .container{
     height: 600px;
+}
+.search-bar{
+
+}
+.filtro{
+    background-color: rgba(100, 100, 100, 0.8);
+    width: 200px;
+    height: 50px;
 }

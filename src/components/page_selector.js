@@ -3,8 +3,8 @@ import React from 'react'
 const selector = (props) =>{
     return(
         <div className = "page-selector">
-            <div className = "pgleft" onClick = {() => props.onPageSelect(props.page-1)}> ant.  </div>
-            <div className = "pgright" onClick = {() => props.onPageSelect(props.page+1)}> prox.  </div>
+            <button className = "pgleft" onClick = {() => props.onPageSelect(props.page-1)}> &lt;  </button>
+            <button className = "pgright" onClick = {() => props.onPageSelect(props.page+1)}> &gt;  </button>
         </div>
     );
 }

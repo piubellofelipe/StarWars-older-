@@ -23,7 +23,6 @@ const selectedCharacter = (props) => {
     });
     //if it is requires to show additional info, in this case, about a movie, return this.
     if (props.addInfo != null){
-        console.log(props.addInfo);
         return (
             <div   className = "mainInfo">
             <div onClick = { () => props.onAddInfoSelect(null)}> back </div>
