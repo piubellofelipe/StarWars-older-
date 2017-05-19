@@ -10,6 +10,7 @@ class SearchBar extends Component{
         <div className="search-bar">
             <input 
             value = {this.state.term}
+            defaultValue = {"Search for a character name"}
             onChange={event => this.onInputChange(event.target.value)} />
         </div>
         );
