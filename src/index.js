@@ -59,7 +59,7 @@ class App extends Component{
     characterSearch(term){
         var url = 'https://swapi.co/api/people/?search=';
         var response = "";
-        req.open('GET', url+term.term, false);
+        req.open('GET', url+term, false);
         req.addEventListener('load', function(){
             if (req.status >= 200 && req.status < 400){
                 response = JSON.parse(req.responseText);
@@ -68,18 +68,17 @@ class App extends Component{
             }
         });
         req.send(null);
-        this.setState({characters : (response.results)});
-        this.reload();
+        this.setState({characters : (response.results)}, this.reaload); 
         return response.results;
     }
 
 //display everything
     render() {
-        const characterSearch = _.debounce((term) => this.characterSearch(term), 100);
-        
+            const characterSearch = (term) => this.characterSearch(term);
+
         return(
             <div className = "app">
-                <SearchBar onSearchCharacterChange={characterSearch}/>
+                <SearchBar onSearch={ term => this.characterSearch(term)}/>
                 <Filter 
                     onFilterChange={ filter => this.setState({filter})}
                     onApplyFilters = { () => this.reload()}

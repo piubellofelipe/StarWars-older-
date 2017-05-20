@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 //component responsible for showing the selectedCharacter basic info and display any additional info when required
 const selectedCharacter = (props) => {
     const selected = props.selectedCharacter;
-    if (!selected) return <div   className = "mainInfo">Bem vindo ao Tudo sobre StarWars! Selecione um personagem para ver suas principais informações!</div>;
+    if (!selected) return <div   className = "mainInfo"><div className="mainInfoInner">Bem vindo ao Tudo sobre StarWars! Selecione um personagem para ver suas principais informações!</div></div>;
 
 
     //gather movies info
@@ -25,11 +25,12 @@ const selectedCharacter = (props) => {
     if (props.addInfo != null){
         return (
             <div   className = "mainInfo">
-            <div onClick = { () => props.onAddInfoSelect(null)}> back </div>
-            <div>TITULO: {props.addInfo.title}</div>
-            <div>DATA DE LANÇAMENTO: {props.addInfo.release_date}</div>
-            <div>EPISODIO: {props.addInfo.episode_id}</div>
-            <div></div>
+                <div className = "mainInfoInner">
+                    <div onClick = { () => props.onAddInfoSelect(null)}> back </div>
+                    <div>TITULO: {props.addInfo.title}</div>
+                    <div>DATA DE LANÇAMENTO: {props.addInfo.release_date}</div>
+                    <div>EPISODIO: {props.addInfo.episode_id}</div>
+                </div>
             </div>
         );
 
