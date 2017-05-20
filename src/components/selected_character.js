@@ -25,12 +25,10 @@ const selectedCharacter = (props) => {
     if (props.addInfo != null){
         return (
             <div   className = "mainInfo">
-                <div className = "mainInfoInner">
                     <div onClick = { () => props.onAddInfoSelect(null)}> back </div>
                     <div>TITULO: {props.addInfo.title}</div>
                     <div>DATA DE LANÇAMENTO: {props.addInfo.release_date}</div>
                     <div>EPISODIO: {props.addInfo.episode_id}</div>
-                </div>
             </div>
         );
 

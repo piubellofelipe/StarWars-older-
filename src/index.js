@@ -74,7 +74,7 @@ class App extends Component{
 
 //display everything
     render() {
-            const characterSearch = (term) => this.characterSearch(term);
+            const characterSearch = _.debounce((term) => this.characterSearch(term), 100);
 
         return(
             <div className = "app">
@@ -103,7 +103,7 @@ class App extends Component{
                                    }
                     page = {this.state.page}
                 />    
-                <div>{this.state.page} / 11</div>
+                <div>{this.state.page} / 9</div>
             </div>
         );
     }
