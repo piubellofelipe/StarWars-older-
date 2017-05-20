@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 class Filter extends Component{
     constructor(props){
         super(props);
-        this.state = {gender : null,
-                      height : null,
-                      mass : null
+        this.state = {gender: null,
+                       minMass:null, maxMass: null,
+                       minHeight: null, maxHeight: null
         };
     }
     render(){
@@ -15,14 +15,28 @@ class Filter extends Component{
             value = {this.state.gender}
             defaultValue = {"genero"}
             onChange={event => this.onGenderInputChange(event.target.value)} />
+            
             <input 
             value = {this.state.height}
-            defaultValue = {"altura"}
-            onChange={event => this.onHeightInputChange(event.target.value)} />
+            defaultValue = {"altura minima"}
+            onChange={event => this.onMinHeightInputChange(event.target.value)} />
+            <input 
+            value = {this.state.height}
+            defaultValue = {"altura maxima"}
+            onChange={event => this.onMaxHeightInputChange(event.target.value)} />
+            
             <input 
             value = {this.state.mass}
-            defaultValue = {"massa"}
-            onChange={event => this.onMassInputChange(event.target.value)} />
+            defaultValue = {"massa minima"}
+            onChange={event => this.onMinMassInputChange(event.target.value)} />
+
+            <input 
+            value = {this.state.mass}
+            defaultValue = {"massa maxima"}
+            onChange={event => this.onMaxMassInputChange(event.target.value)} />
+
+
+
             <button className = "applyFiltersButton" onClick = {this.props.onApplyFilters}> APLICAR FILTROS</button>
         </div>
         );
@@ -35,11 +49,17 @@ class Filter extends Component{
     onGenderInputChange(gender) {
         this.setState({gender}, this.onFilterInputChange);
     }
-    onHeightInputChange(height) {
-        this.setState({height}, this.onFilterInputChange);
+    onMinHeightInputChange(minHeight) {
+        this.setState({minHeight}, this.onFilterInputChange);
     }
-    onMassInputChange(mass) {
-        this.setState({mass}, this.onFilterInputChange);
+    onMaxHeightInputChange(maxHeight) {
+        this.setState({maxHeight}, this.onFilterInputChange);
+    }
+    onMinMassInputChange(minMass) {
+        this.setState({minMass}, this.onFilterInputChange);
+    }
+    onMaxMassInputChange(maxMass) {
+        this.setState({maxMass}, this.onFilterInputChange);
     }
 }
 

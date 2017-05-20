@@ -22,7 +22,9 @@ class App extends Component{
              characters: response,
              selectedCharacter : null,
              addInfo : null,
-             filter : {gender: null, mass: null, altura: null}
+             filter : {gender: null,
+                       minMass:null, maxMass: null,
+                       minHeight: null, maxHeight: null}
         };        
     }
 
@@ -46,9 +48,13 @@ class App extends Component{
         var newChars = "";
         newChars = this.state.characters.filter( character => {
             if ((!this.state.filter.gender || character.gender == this.state.filter.gender) &&
-            (!this.state.filter.mass || character.mass == this.state.filter.mass) &&
-            (!this.state.filter.height || character.height == this.state.filter.height)
+            (!this.state.filter.minMass || parseFloat(character.mass) >= parseFloat(this.state.filter.minMass)) &&
+            (!this.state.filter.maxMass || parseFloat(character.mass) <= parseFloat(this.state.filter.maxMass)) &&
+            (!this.state.filter.minHeight || parseFloat(character.height) >= parseFloat(this.state.filter.minHeight)) &&
+            (!this.state.filter.maxHeight || parseFloat(character.height) <= parseFloat(this.state.filter.maxHeight))
             ){
+                console.log(parseFloat(this.state.filter.maxMass), parseFloat(character.mass),  parseFloat(this.state.filter.maxMass) >= parseFloat(character.mass));
+                console.log(character);
                 return character;
             }
         });
